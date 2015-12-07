@@ -1,0 +1,33 @@
+.x-grid-item-selected .sch-gantt-task-bar.sch-event-notsegmented,
+.sch-gantt-task-highlighted .sch-gantt-task-bar.sch-event-notsegmented,
+.sch-gantt-task-highlighted .sch-gantt-task-segment,
+.x-grid-item-selected .sch-gantt-task-segment {
+}
+
+.sch-gantt-task-bar, .sch-gantt-task-segment {
+    border-color     : rgb(137, 187, 56);
+    background-color : rgb(108, 214, 135);
+    border-radius    : 2px;
+}
+
+.sch-gantt-task-bar .sch-gantt-progress-bar,
+.sch-gantt-task-segment .sch-gantt-progress-bar {
+    background-color : rgb(166,230, 183);
+}
+
+.sch-gantt-label {
+    color : #555;
+}
+
+.x-grid-item-selected .sch-gantt-label {
+    color : #000;
+}
+
+.sch-gantt-task-baseline .sch-gantt-task-bar {
+    background   : #EEEEEE;
+    border-color : orange;
+}
+
+.sch-ganttpanel-showbaseline .sch-gantt-task-baseline {
+    display : block;
+}

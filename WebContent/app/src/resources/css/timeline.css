@@ -1,0 +1,71 @@
+
+.sch-gantt-timeline .sch-header-row {
+    display: none;
+}
+.sch-gantt-timeline .sch-header-row:first-child {
+    display: block;
+}
+.sch-gantt-timeline .sch-column-header, .sch-gantt-timeline .x-grid-header-ct, .sch-gantt-timeline .x-column-header {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+    border: 0 none;
+    color: #999;
+}
+.sch-gantt-timeline .sch-schedulerview {
+    overflow: hidden !important;
+}
+.sch-gantt-timeline .sch-schedulerview .x-grid-cell {
+    background: #707070 none repeat scroll 0 0 !important;
+    border: 3px solid #ccc !important;
+}
+.sch-gantt-timeline .sch-gantt-timeline-stretch {
+    height: 100% !important;
+}
+.sch-gantt-timeline .x-grid-body {
+    border: 0 none !important;
+}
+.sch-gantt-timeline .x-grid {
+    border: 0 none;
+}
+.sch-gantt-timeline .sch-event {
+    background-color: rgb(112, 184, 114);
+    background-image: none;
+    border-color: transparent;
+    color: #fff;
+}
+.sch-gantt-timeline div.sch-event-milestone {
+    background: #333 none repeat scroll 0 0;
+    border: 3px solid #ccc;
+    border-radius: 1px;
+    bottom: -13px;
+    box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.2);
+    height: 24px !important;
+    margin-left: -13px;
+    overflow: visible;
+    top: auto !important;
+    transform: rotate(45deg);
+    width: 24px !important;
+    z-index: 100;
+}
+div.sch-event-milestone .sch-event-inner {
+    color: #888;
+    margin-top: 22px;
+    overflow: visible;
+    text-indent: 33px;
+    transform: rotate(-45deg);
+}
+.sch-gantt-timeline div.sch-event-milestone .sch-resizable-handle {
+    display: none;
+}
+.sch-gantt-timeline .sch-timelineview .x-grid-item-container {
+    padding-bottom: 20px;
+}
+.sch-gantt-timeline-label {
+    margin-top: 16px;
+}
+.sch-gantt-timeline-right-label {
+    margin-left: 10px;
+}
+.sch-gantt-timeline-left-label {
+    margin-right: 10px;
+    text-align: right;
+}

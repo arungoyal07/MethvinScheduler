@@ -1,0 +1,15 @@
+.x-ie .sch-ganttview td.sch-timetd {
+    background-image : none !important; /* z-index hack for IE, keeping dependencylines above rows */
+}
+
+/* Keeping dependencylines under tasks */
+.sch-ganttview td.sch-timetd {
+    position : static !important;
+}
+
+/* The dependency view element is at 1st position in the Ext JS grid view itemcontainer which
+    breaks some CSS rules in Ext JS (using :first-child)
+*/
+.x-ie8m .sch-ganttview.x-grid-with-row-lines .x-grid-item[data-recordindex="0"] {
+    margin-top : 0;
+}

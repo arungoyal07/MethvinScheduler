@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E200C476-7F69-4DA1-B0AD-B2CA78063843}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebContent</RootNamespace>
+    <AssemblyName>WebContent</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\lib\gantt-3.0.6\changelog.txt" />
+    <Content Include="app\lib\gantt-3.0.6\gnt-all-debug.js" />
+    <Content Include="app\lib\gantt-3.0.6\gnt-all.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\AddNew.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\AssignmentUnits.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\BaselineEndDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\BaselineStartDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Calendar.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\ConstraintDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\ConstraintType.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Dependency.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Duration.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\EarlyEndDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\EarlyStartDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Effort.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\EndDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\LateEndDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\LateStartDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\ManuallyScheduled.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Milestone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\mixin\TaskFieldColumn.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Name.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Note.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\PercentDone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Predecessor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\ResourceAssignment.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\ResourceName.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Rollup.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Scale.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\SchedulingMode.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Sequence.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Slack.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\StartDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\Successor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\column\WBS.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\AsLateAsPossible.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\AsSoonAsPossible.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\Base.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\FinishNoEarlierThan.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\FinishNoLaterThan.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\MustFinishOn.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\MustStartOn.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\StartNoEarlierThan.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\constraint\StartNoLaterThan.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\AssignmentStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\Calendar.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\CalendarManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\calendar\BusinessTime.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\CrudManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\DependencyStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\Linearizator.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\linearizator\CycleResolvers.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\mixin\ProjectableStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\ResourceStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\TaskStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\util\IdConsistencyManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\data\util\ModelPersistencyManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\DependencyDragDrop.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\DependencyDragZone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\DependencyDropZone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\DragCreator.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\LabelEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\ProgressBarResize.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\TaskDragDrop.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\TaskResize.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\feature\WorkingTime.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Assignment.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Background.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\BaselineEndDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\BaselineStartDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Calendar.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\ConstraintDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\ConstraintType.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Dependency.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Duration.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Effort.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\EndDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\ManuallyScheduled.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Milestone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\mixin\TaskField.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Note.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\Percent.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\ReadOnly.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\SchedulingMode.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\field\StartDate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\De.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\En.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\It.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\Nl.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\Pl.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\RuRU.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\locale\SvSE.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\mixin\Localizable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Assignment.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\AssignmentEditing.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Calendar.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\CalendarDay.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Dependency.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\mixin\ProjectableModel.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Project.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\ProjectLine.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Resource.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Task.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\TaskSegment.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\task\Constraints.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\task\More.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\task\Splittable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\model\Week.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\panel\Gantt.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\panel\ResourceHistogram.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\CellEditing.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\CellEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\IETreeStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\RightClick.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\TaskStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\Tooltip.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\patches\TreeColumn.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\ConstraintResolutionGui.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\DependencyEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\Export.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\exporter\mixin\DependencyPainter.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\exporter\MultiPage.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\exporter\MultiPageVertical.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\exporter\SinglePage.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\Printable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\ProjectLines.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\TaskContextMenu.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\taskeditor\BaseEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\taskeditor\ProjectEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\plugin\taskeditor\TaskEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\template\Milestone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\template\ParentTask.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\template\RollupTask.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\template\Task.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\template\Template.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\Tooltip.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\util\Data.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\util\DependencyParser.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\util\DurationParser.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\view\Dependency.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\view\DependencyPainter.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\view\Gantt.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\view\ResourceHistogram.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\AssignmentEditGrid.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\AssignmentGrid.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\BackgroundPicker.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\Calendar.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\AvailabilityGrid.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\Calendar.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\CalendarManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\CalendarManagerWindow.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\CalendarWindow.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\DatePicker.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\DayEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\ResourceCalendarGrid.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\calendar\WeekEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\ConstraintResolutionForm.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\ConstraintResolutionWindow.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\DependencyGrid.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\taskeditor\BaseEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\taskeditor\BaseForm.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\taskeditor\ProjectEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\taskeditor\ProjectForm.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\taskeditor\TaskEditor.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Gnt\widget\taskeditor\TaskForm.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\column\timeAxis\Horizontal.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\crud\AbstractManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\crud\encoder\Json.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\crud\encoder\Xml.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\crud\transport\Ajax.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\AssignmentStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\mixin\CacheHintHelper.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\mixin\EventStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\mixin\FilterableTreeStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\mixin\ResourceStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\mixin\UniversalModelGetter.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\ResourceStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\TimeAxis.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\AssignmentStoreEventResourcesCache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\AssignmentStoreResourceEventsCache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\EventAssignmentsCache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\IdConsistencyManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\ModelPersistencyManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\ResourceAssignmentsCache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\data\util\ResourceEventsCache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\feature\AbstractTimeSpan.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\feature\ColumnLines.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\feature\ResizeZone.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\De.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\En.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\It.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\Locale.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\Nl.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\Pl.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\RuRU.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\locale\SvSE.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\AbstractTimelinePanel.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\AbstractTimelineView.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\FilterableTreeView.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\Localizable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\TimelinePanel.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\TimelineView.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\mixin\Zoomable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\model\Assignment.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\model\Customizable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\model\Range.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\model\Resource.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\model\TimeAxisTick.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\panel\TimelineGridPanel.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\panel\TimelineTreePanel.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\BufferedRenderer.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\Chrome.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\Collection.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\ColumnResizeTree.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\NodeCache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\NodeStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\OperationDestroy.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\PartnerScroll.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\RowSynchronizer.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\TableView.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\ToolTip.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\TouchScroll.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\TreeStore.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\TreeStoreInternalIdMap.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\patches\View.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\CurrentTimeLine.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\Export.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\exporter\AbstractExporter.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\exporter\MultiPage.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\exporter\MultiPageVertical.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\exporter\SinglePage.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\HeaderZoom.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\Lines.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\Pan.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\Printable.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\TreeCellEditing.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\plugin\Zones.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\preset\Manager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\preset\ViewPreset.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\tooltip\ClockTemplate.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\tooltip\HoverTip.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\tooltip\Tooltip.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\util\Cache.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\util\Date.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\util\DragTracker.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\util\Patch.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\util\ScrollManager.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\view\Horizontal.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\view\HorizontalTimeAxis.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\view\model\TimeAxis.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\view\TimelineGridView.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\widget\ExportDialog.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\widget\ExportDialogForm.js" />
+    <Content Include="app\lib\gantt-3.0.6\js\Sch\widget\ResizePicker.js" />
+    <Content Include="app\lib\gantt-3.0.6\readme.txt" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all-crisp.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all-debug.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all-neptune-debug.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all-neptune.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all-no-theme-debug.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all-no-theme.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-all.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-gantt-all-debug.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-gantt-all.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-gantt-crisp-all-debug.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-gantt-crisp-all.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-gantt-neptune-all-debug.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch-gantt-neptune-all.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt-classic.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt-crisp.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt-neptune.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.assignmentgrid.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.column.addnew.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.column.duration.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.column.scale.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.dependencyview.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.dragcreator.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.dragdrop.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.ganttpanel.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.ganttview.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.milestone-classic.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.milestone-crisp.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.milestone-neptune.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.milestone.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.parenttask-classic.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.parenttask-crisp.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.parenttask-neptune.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.parenttask.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.plugin.dependencyeditor.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.plugin.printable.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.progressbarresize.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.projecttask.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.resize.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.resourcehistogram.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.task-classic.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.task-crisp.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.task-neptune.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.task.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.tooltip.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.widget.calendar.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.widget.dependencygrid.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\css\sch.gantt.widget.taskeditor.taskform.css" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\1px.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\add.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\altrow.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\close-icon.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\column-header-bg.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\column-header-over-bg.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\column-weekend-header-bg.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\delete.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\dependencyterminal.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\drop-no.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\drop-yes.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\edit.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\invalid_line.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\overriddenDay.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\overriddenWeekDay.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\page-horizontal-icon.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\page-vertical-icon.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\pattern.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\pdf-icon.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\png-icon.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\progressbar-handle.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\resize-handle-hor.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\resize-handle-ver.gif" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\transp-1px.png" />
+    <Content Include="app\lib\gantt-3.0.6\resources\images\zonebg.png" />
+    <Content Include="app\lib\gantt-3.0.6\sch-all-debug.js" />
+    <Content Include="app\lib\gantt-3.0.6\sch-all.js" />
+    <Content Include="app\resources\images\estimation.png" />
+    <Content Include="app\resources\images\home.png" />
+    <Content Include="app\resources\images\methvin-header.png" />
+    <Content Include="app\resources\images\project.png" />
+    <Content Include="app\resources\images\publish.png" />
+    <Content Include="app\src-pricing\controller\HtmlPanelExtender.js" />
+    <Content Include="app\src-pricing\model\estimation\GlobalVariablesModel.js" />
+    <Content Include="app\src-pricing\model\estimation\PricingFormulaGridModel.js" />
+    <Content Include="app\src-pricing\model\estimation\ProjectTreeModel.js" />
+    <Content Include="app\src-pricing\model\estimation\ResourceTreeModel.js" />
+    <Content Include="app\src-pricing\model\estimation\ResourceFormulaTreeModel.js" />
+    <Content Include="app\src-pricing\controller\Utilities.js" />
+    <Content Include="app\src-pricing\store\estimation\GlobalVariablesStore.js" />
+    <Content Include="app\src-pricing\store\estimation\LinkedTaskStore.js" />
+    <Content Include="app\src-pricing\store\estimation\ProjectTreeStore.js" />
+    <Content Include="app\src-pricing\view\estimation\GlobalVariableGrid.js" />
+    <Content Include="app\src-pricing\view\estimation\LinkedTaskGrid.js" />
+    <Content Include="app\src-pricing\view\estimation\ProjectTree.js" />
+    <Content Include="app\src-pricing\view\viewcontroller\PricingFormulaTreeViewController.js" />
+    <Content Include="app\src-pricing\view\viewcontroller\ProjectTreeViewController.js" />
+    <Content Include="app\src\resources\fonts\bryntum-advanced.eot" />
+    <Content Include="app\src\resources\fonts\bryntum-advanced.ttf" />
+    <Content Include="app\src\resources\fonts\bryntum-advanced.woff" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\fonts\FontAwesome.otf" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\animated.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\bordered-pulled.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\core.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\fixed-width.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\font-awesome.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\icons.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\larger.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\list.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\mixins.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\path.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\rotated-flipped.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\stacked.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\less\variables.less" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\font-awesome.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_animated.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_bordered-pulled.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_core.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_fixed-width.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_icons.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_larger.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_list.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_mixins.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_path.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_rotated-flipped.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_stacked.scss" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\scss\_variables.scss" />
+    <Content Include="app\src\resources\fonts\icomoon.eot" />
+    <Content Include="app\src\resources\fonts\icomoon.ttf" />
+    <Content Include="app\src\resources\fonts\icomoon.woff" />
+    <Content Include="app\lib\gantt-3.0.6\.jshintrc" />
+    <Content Include="app\lib\gantt-3.0.6\gantt.jsb3" />
+    <Content Include="app\lib\gantt-3.0.6\License.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\src-pricing\model\estimation\PricingFormulaTreeModel.js" />
+    <Content Include="app\src-pricing\model\estimation\PricingTreeModel.js" />
+    <Content Include="app\src-pricing\store\estimation\PricingFormulaTreeStore.js" />
+    <Content Include="app\src-pricing\store\estimation\PricingTreeStore.js" />
+    <Content Include="app\src-pricing\view\estimation\PricingFormulaTree.js" />
+    <Content Include="app\src-pricing\view\estimation\PricingTree.js" />
+    <Content Include="app\src-pricing\view\main\Main.js" />
+    <Content Include="app\src-pricing\view\main\SubmenuTabPanel.js" />
+    <Content Include="app\src-pricing\view\viewcontroller\PricingTreeViewController.js" />
+    <Content Include="app\src\app.js" />
+    <Content Include="app\src\Application.js" />
+    <Content Include="app\src\column\ShowInTimeline.js" />
+    <Content Include="app\src\controller\Navigation.js" />
+    <Content Include="app\src\locale\En.js" />
+    <Content Include="app\src\model\Project.js" />
+    <Content Include="app\src\model\Resource.js" />
+    <Content Include="app\src\model\Task.js" />
+    <Content Include="app\src\plugin\TaskArea.js" />
+    <Content Include="app\src\plugin\TaskContextMenu.js" />
+    <Content Include="app\src\resources\css\advanced.css" />
+    <Content Include="app\src\resources\css\gantt-schduler.css" />
+    <Content Include="app\src\resources\css\style.css" />
+    <Content Include="app\src\resources\css\timeline-themes.css" />
+    <Content Include="app\src\resources\css\timeline.css" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\css\font-awesome.css" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\css\font-awesome.min.css" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\src\resources\fonts\font-awesome-4.4.0\HELP-US-OUT.txt" />
+    <Content Include="app\src\resources\images\0220-folder2.png" />
+    <Content Include="app\src\resources\images\0221-folder-open.png" />
+    <Content Include="app\src\resources\images\0873-circle-small.png" />
+    <Content Include="app\src\resources\images\1222-arrow-downright %281%29.png" />
+    <Content Include="app\src\resources\images\1222-arrow-downright.png" />
+    <Content Include="app\src\resources\images\1222-arrow-right5.png" />
+    <Content Include="app\src\resources\images\1387-diamond4.png" />
+    <Content Include="app\src\store\Calendars.js" />
+    <Content Include="app\src\store\TaskStore.js" />
+    <Content Include="app\src\view\Gantt.js" />
+    <Content Include="app\src\view\GanttActionMenu.js" />
+    <Content Include="app\src\view\Login.Js" />
+    <Content Include="app\src\view\Navigation.js" />
+    <Content Include="app\src\view\ResourceHistogram.js" />
+    <Content Include="app\src\view\ResourceList.js" />
+    <Content Include="app\src\view\ResourceSchedule.js" />
+    <Content Include="app\src\view\Timeline.js" />
+    <Content Include="app\src\view\TimelineScheduler.js" />
+    <Content Include="app\src\view\viewcontroller\GanttActionMenuViewController.js" />
+    <Content Include="app\src\view\viewcontroller\LoginViewController.js" />
+    <Content Include="app\src\view\viewmodel\GanttActionMenuViewModel.js" />
+    <Content Include="app\src\view\Viewport.js" />
+    <Content Include="pricing.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59762</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59762/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
