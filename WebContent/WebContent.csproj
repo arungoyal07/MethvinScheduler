@@ -400,9 +400,13 @@
     <Content Include="app\src-pricing\controller\Utilities.js" />
     <Content Include="app\src-pricing\store\estimation\GlobalVariablesStore.js" />
     <Content Include="app\src-pricing\store\estimation\LinkedTaskStore.js" />
+    <Content Include="app\src-pricing\store\estimation\ResourceTreeStore.js" />
+    <Content Include="app\src-pricing\store\estimation\PricingTreeStore.js" />
     <Content Include="app\src-pricing\store\estimation\ProjectTreeStore.js" />
     <Content Include="app\src-pricing\view\estimation\GlobalVariableGrid.js" />
     <Content Include="app\src-pricing\view\estimation\LinkedTaskGrid.js" />
+    <Content Include="app\src-pricing\view\estimation\ParentResourceTree.js" />
+    <Content Include="app\src-pricing\view\estimation\ResourceTree.js" />
     <Content Include="app\src-pricing\view\estimation\ProjectTree.js" />
     <Content Include="app\src-pricing\view\viewcontroller\PricingFormulaTreeViewController.js" />
     <Content Include="app\src-pricing\view\viewcontroller\ProjectTreeViewController.js" />
@@ -451,7 +455,6 @@
     <Content Include="app\src-pricing\model\estimation\PricingFormulaTreeModel.js" />
     <Content Include="app\src-pricing\model\estimation\PricingTreeModel.js" />
     <Content Include="app\src-pricing\store\estimation\PricingFormulaTreeStore.js" />
-    <Content Include="app\src-pricing\store\estimation\PricingTreeStore.js" />
     <Content Include="app\src-pricing\view\estimation\PricingFormulaTree.js" />
     <Content Include="app\src-pricing\view\estimation\PricingTree.js" />
     <Content Include="app\src-pricing\view\main\Main.js" />

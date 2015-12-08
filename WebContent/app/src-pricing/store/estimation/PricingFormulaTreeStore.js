@@ -2,7 +2,7 @@ Ext.define('Pricing.store.estimation.PricingFormulaTreeStore', {
     extend: 'Ext.data.TreeStore',
     model: 'Pricing.model.estimation.PricingFormulaTreeModel',
     autoSync: false,
-    autoLoad:false,
+    autoLoad: false,
     root: {
         id: 0,
         expanded: false
@@ -25,11 +25,20 @@ Ext.define('Pricing.store.estimation.PricingFormulaTreeStore', {
             create: 'rest/estimation/addpricingformulae',
             read: 'rest/estimation/getpricingformulae',
             update: 'rest/estimation/updatepricingformulae',
-            destroy:'rest/estimation/deletepricingformulae'
+            destroy: 'rest/estimation/deletepricingformulae'
         },
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json;charset=utf-8'
+        }
+    },
+    allDataLoadHandler: function () {
+        var formulaStore = Ext.getCmp('methvinPricingFormulaTree').getStore();
+        var linkStore = Ext.getCmp('methvinLinkedTaskGrid').getStore();
+        if (formulaStore.allDataLoaded && linkStore.allDataLoaded && Pricing.controller.Utilities.pricingFormulaResourceStore.allDataLoaded) {
+            Ext.getCmp('methvinPricingTree').setLoading(false);
+            Ext.getCmp('methvinPricingTreeContainer').hide();
+            Ext.getCmp('methvinPricingFormulaTreeContainer').show();
         }
     }
 });

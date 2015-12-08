@@ -26,38 +26,14 @@ Ext.define('Pricing.view.viewcontroller.PricingTreeViewController', {
         if (!record.phantom && record.isLeaf()) {
             var column = iView.getGridColumns()[cellIndex].dataIndex;
             if (column == 'costRate' || column == 'costAmount') {
-                //load linked tasks
-                var linkedGrid = Ext.getCmp('methvinLinkedTaskGrid');
-                var linkedStore = linkedGrid.getStore();
-                linkedStore.clearData();
-                Ext.getCmp('methvinLinkedTaskGridContainer').hide();
+                var pricingTree = Ext.getCmp('methvinPricingTree');
+                var pricingStore = pricingTree.getStore();
+                pricingTree.setLoading(true);
 
-                //set proxy of the pricing formula grid
-                var formulaStore = Ext.getCmp('methvinPricingFormulaTree').getStore();
-                Pricing.controller.Utilities.setPricingFormulaStore(formulaStore, 1, record);
+                Pricing.controller.Utilities.setLinkedTaskProxy(pricingStore.projectId, record); 
+                Pricing.controller.Utilities.setPricingFormulaResourceStore(pricingStore.projectId);
+                Pricing.controller.Utilities.setPricingFormulaStore(pricingStore.projectId, record);
 
-                //if tree was already loaded
-                if (formulaStore.getRootNode().isExpanded()) {
-                    formulaStore.reload();
-                }
-                    //the tree is being loaded first time, as root is not expanded
-                else {
-                    formulaStore.getRootNode().expand();
-                }
-
-                Pricing.controller.Utilities.setLinkedTaskProxy(linkedStore.getProxy(), 1, record.getId());
-                linkedStore.load({
-                    callback: function () {
-                        if (this.getCount() > 1) {
-                            Ext.getCmp('methvinLinkedTaskGridContainer').show();
-                            linkedGrid.getView().refresh();
-                        }
-                    }
-                });
-
-                // hide pricing tab, show pricing formulae tab
-                Ext.getCmp('methvinPricingTreeContainer').hide();
-                Ext.getCmp('methvinPricingFormulaTreeContainer').show();
             }
         }
     },
@@ -204,7 +180,7 @@ Ext.define('Pricing.view.viewcontroller.PricingTreeViewController', {
                 Ext.Msg.alert("Error", "Can not perform the operation");
                 return;
             }
-            if (parentNode.get('quantity')!= 0) {
+            if (parentNode.get('quantity') != 0) {
                 Ext.Msg.alert("Error", "Quantity of parent task should be zero");
                 return;
             }
@@ -320,7 +296,8 @@ Ext.define('Pricing.view.viewcontroller.PricingTreeViewController', {
                             },
                         });
                     }
-                }            }
+                }
+            }
             else {
                 for (var index in orderedList) {
                     var node = orderedList[index];

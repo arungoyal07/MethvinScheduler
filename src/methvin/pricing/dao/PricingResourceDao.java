@@ -28,34 +28,12 @@ public class PricingResourceDao extends BaseDao<PricingResource> {
 		return resources;
 	}
 		
-	public List<PricingResource> addPricingResourcee(List<PricingResource> formulae){
-		
-		HashMap<Integer, Integer> formulaClientIdMap=new HashMap<Integer,Integer>();
-		
-		//new formulas on first level
+	public List<PricingResource> addPricingResourcee(int projectId,List<PricingResource> formulae){
 		for (PricingResource formula : formulae){
-			if(formula.getId()==0 && formula.getParentId()==0){
-				formula.setProjectId(1);
-				Session ses=getSession();
-				ses.saveOrUpdate(formula);
-				formulaClientIdMap.put(formula.getClientId(), formula.getId());
-			}
-		}		
-		
-		//new formulas on second level
-		for (PricingResource formula : formulae){
-			if(formula.getId()==0 && !(formula.getParentId()==0)){
-				int foundIid=formulaClientIdMap.get(formula.getParentId());
-				formula.setParentId(foundIid);
-				formula.setProjectId(1);
-				Session ses=getSession();
-				ses.saveOrUpdate(formula);
-			}
+			formula.setProjectId(projectId);
+			Session ses=getSession();
+			ses.saveOrUpdate(formula);
 		}
-		
-		//TODO: don't forget the case when existing formula is moved under a new formula
-		//it would be update but with wrong parent id
-		
 		return formulae;	
 	}
 

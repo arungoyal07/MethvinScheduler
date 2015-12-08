@@ -11,7 +11,7 @@ import javax.persistence.Transient;
 @Table(name = "pricing_resource")
 public class PricingResource extends PricingHierarchyBase {
 	private String description;
-	private int ProjectId;
+	private int projectId;
 	private double rate;
 	private String unit;
 	private double resUsage;
@@ -25,6 +25,15 @@ public class PricingResource extends PricingHierarchyBase {
 	private double baseRate;
 	private int currencyId;
 	private int conversionRate;
+	private boolean isComplex;
+
+	public boolean isComplex() {
+		return isComplex;
+	}
+
+	public void setComplex(boolean isComplex) {
+		this.isComplex = isComplex;
+	}
 
 	@Transient
 	private boolean leaf = true;
@@ -48,11 +57,11 @@ public class PricingResource extends PricingHierarchyBase {
 	}
 
 	public int getProjectId() {
-		return ProjectId;
+		return projectId;
 	}
 
 	public void setProjectId(int projectId) {
-		ProjectId = projectId;
+		this.projectId = projectId;
 	}
 
 	public void setDescription(String description) {

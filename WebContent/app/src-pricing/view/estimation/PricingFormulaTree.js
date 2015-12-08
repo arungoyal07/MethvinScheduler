@@ -70,11 +70,51 @@ Ext.define('Pricing.view.estimation.PricingFormulaTree', {
         editor: { xtype: 'textfield' }
     }, {
         header: 'Resource',
-        dataIndex: 'resourceId'
+        dataIndex: 'resourceId',
+        editor: {
+            xtype: 'combo',
+            allowBlank: true,
+            emptyText: 'choose Resources',
+            displayField: 'description',
+            valueField: 'id',
+            queryMode: 'local',
+            typeAhead: true,
+            store: Pricing.controller.Utilities.pricingFormulaComboStore,
+            listeners: {
+                /*beforequery: function (queryPlan) {
+                    var store = queryPlan.combo.getStore();
+                    store.clearFilter();
+                    var regEx = new RegExp(".*" + queryPlan.query + ".*");
+                    store.filterBy(function (record) {
+                        var desc = record.get('description');
+                        return desc ? desc.match(regEx) != null : false;
+                    });
+                    return false;
+                },*/
+                blur: function (combo) {
+                    if (combo.value != null && combo.value != '0') {
+                        if (isNaN(combo.value) || !Pricing.controller.Utilities.pricingFormulaComboStore.getById(Number(combo.value))) {//selected text does not belong to any of the resource
+                            var selectedRecord = Ext.getCmp('methvinPricingFormulaTree').getSelectionModel().getSelection()[0];
+                            Pricing.controller.Utilities.showResourceAppender(combo.value, selectedRecord.getId());
+                        }
+                        else {
+                            var item = Pricing.controller.Utilities.pricingFormulaComboStore.getById(Number(combo.value));
+                            var selectedFormula = Ext.getCmp('methvinPricingFormulaTree').getSelectionModel().getSelection()[0];
+                            selectedFormula.set('resourceId', item.getId());
+                            selectedFormula.set('resourceRate', item.get('rate'));
+                        }
+                    }
+                    return true;
+                }
+            }
+        }
     }, {
         header: 'Rate',
         dataIndex: 'resourceRate',
-        editor: { xtype: 'textfield' }
+        editor: {
+            xtype: 'textfield',
+            maskRe: /0-9./
+        }
     }, {
         header: 'Unit',
         dataIndex: 'unit'

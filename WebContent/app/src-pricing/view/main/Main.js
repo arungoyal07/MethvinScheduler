@@ -19,7 +19,8 @@ Ext.define('Pricing.view.main.Main', {
         'Pricing.model.estimation.GlobalVariablesModel', 'Pricing.store.estimation.GlobalVariablesStore',
         'Pricing.view.estimation.GlobalVariableGrid',
         //Resource components
-        'Pricing.model.estimation.ResourceTreeModel', 'Pricing.store.estimation.ResourceTreeStore'
+        'Pricing.model.estimation.ResourceTreeModel', 'Pricing.store.estimation.ResourceTreeStore',
+        'Pricing.view.estimation.ResourceTree', 'Pricing.view.estimation.ParentResourceTree'
     ],
     layout: 'border',
     border: 0,

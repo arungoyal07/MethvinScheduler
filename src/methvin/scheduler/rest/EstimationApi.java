@@ -265,4 +265,14 @@ public class EstimationApi {
 		return container;		
 	}
 	
+	@POST
+	@Path("/addresources/{projectId}")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public ResourceContainer addResources(@PathParam("projectId") int projectId,ResourceContainer recourceContainer){
+		resourceDao.addPricingResourcee(projectId,recourceContainer.children);
+		recourceContainer.Success=true;
+		return recourceContainer;
+	}
+	
 }
